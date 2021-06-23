@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginEnd="10dp"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/txt_nome_exercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:maxLength="50"
+        android:text="Nome do Exercicio: "
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:id="@+id/nomeExercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="136dp"
+        android:layout_toEndOf="@+id/txt_nome_exercicio"
+        android:maxLength="50"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txt_qtd_exercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_nome_exercicio"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:maxLength="50"
+        android:text="Duração do Exercicio: "
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/qtdExercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/nomeExercicio"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="136dp"
+        android:layout_toEndOf="@+id/txt_qtd_exercicio"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+
+    <TextView
+        android:id="@+id/txt_descanso_exercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/qtdExercicio"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="10dp"
+        android:maxLength="50"
+        android:text="Descanso: "
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tempoDescansoExercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/qtdExercicio"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="137dp"
+        android:layout_toEndOf="@+id/txt_descanso_exercicio"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</RelativeLayout>
