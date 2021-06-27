@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,6 +16,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import br.edu.infnet.gymcardtraning.databinding.ActivityHomeBinding
+import com.facebook.AccessToken
+import com.facebook.GraphRequest
+import com.facebook.HttpMethod
+import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import com.paypal.android.sdk.payments.*
 import java.math.BigDecimal
@@ -43,7 +48,6 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         navView.setNavigationItemSelectedListener (this,)
-
 
 
 
@@ -103,6 +107,7 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         val id = item.itemId
         if (id==R.id.item_sair){
             FirebaseAuth.getInstance().signOut()
+            LoginManager.getInstance().logOut()
             VoltarParaFormLogin()
         }
         return super.onOptionsItemSelected(item)

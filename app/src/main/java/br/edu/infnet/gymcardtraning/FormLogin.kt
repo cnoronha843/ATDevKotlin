@@ -16,6 +16,7 @@ import com.facebook.FacebookException
 import com.facebook.login.LoginResult
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FacebookAuthProvider
@@ -27,6 +28,7 @@ import java.security.NoSuchAlgorithmException
 
 class FormLogin : AppCompatActivity() {
 
+    lateinit var mAdView : AdView
     lateinit var binding: ActivityFormLoginBinding
     var firebaseAuth: FirebaseAuth?=null
     var callbackManager: CallbackManager?=null
@@ -65,20 +67,11 @@ class FormLogin : AppCompatActivity() {
             }
         }
 
-
-
         MobileAds.initialize(this) {}
+
+        mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
-
-        adView.visibility = View.GONE
-
-        adView.adListener = object : AdListener(){
-            override fun onAdLoaded() {
-                adView.visibility = View.VISIBLE
-                super.onAdLoaded()
-            }
-        }
+        mAdView.loadAd(adRequest)
 
     }
 
