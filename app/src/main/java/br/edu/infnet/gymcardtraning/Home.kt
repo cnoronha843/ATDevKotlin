@@ -114,6 +114,7 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
             FirebaseAuth.getInstance().signOut()
             LoginManager.getInstance().logOut()
             VoltarParaFormLogin()
+            finish()
         }
         return super.onOptionsItemSelected(item)
     }
