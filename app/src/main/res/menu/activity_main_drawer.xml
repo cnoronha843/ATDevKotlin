@@ -17,6 +17,10 @@
             android:icon="@drawable/ic_baseline_payment_24"
             android:title="Mensalidade" />
         <item
+            android:id="@+id/nav_tempo"
+            android:icon="@drawable/ic_baseline_cloud_queue_24"
+            android:title="Tempo" />
+        <item
             android:id="@+id/nav_contato"
             android:icon="@drawable/ic_email_foreground"
             android:title="Contato" />

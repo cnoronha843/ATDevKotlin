@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import br.edu.infnet.gymcardtraning.databinding.ActivityHomeBinding
+import br.edu.infnet.gymcardtraning.ui.activities.WeatherActivity
 import com.facebook.AccessToken
 import com.facebook.GraphRequest
 import com.facebook.HttpMethod
@@ -69,6 +70,10 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
 
         }else if (id == R.id.nav_mensalidade) {
             var intent = Intent(this, Mensalidade::class.java)
+            startActivity(intent)
+
+        }else if (id == R.id.nav_tempo) {
+            var intent = Intent(this, WeatherActivity::class.java)
             startActivity(intent)
 
         }else if (id == R.id.nav_contato){
