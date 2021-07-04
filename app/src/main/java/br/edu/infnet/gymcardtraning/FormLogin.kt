@@ -66,12 +66,12 @@ class FormLogin : AppCompatActivity() {
                 AutenticarUsuario()
             }
         }
-
         MobileAds.initialize(this) {}
 
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
+
 
     }
 
@@ -102,7 +102,9 @@ class FormLogin : AppCompatActivity() {
             }
             .addOnSuccessListener {
                 Toast.makeText(this, "Login efetuado com Sucesso!" ,Toast.LENGTH_LONG).show()
+                finish()
                 IrParaHome()
+
             }
     }
 
@@ -138,6 +140,7 @@ class FormLogin : AppCompatActivity() {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email,senha).addOnCompleteListener {
             if (it.isSuccessful){
                 Toast.makeText(this, "Login efetuado com Sucesso!", Toast.LENGTH_LONG).show()
+                finish()
                 IrParaHome()
             }
 
@@ -165,6 +168,6 @@ class FormLogin : AppCompatActivity() {
     private fun IrParaHome(){
         val intent = Intent(this, Home::class.java)
         startActivity(intent)
-        finish()
+        //finish()
     }
 }

@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GymCardTraning">
-        <activity android:name=".Mensalidade" />
+        <activity android:name=".UpdateExercicioActivity"></activity>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -27,7 +27,7 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-        <activity android:name=".Video" />
+        <activity android:name=".Mensalidade" />
         <activity android:name=".FormLogin" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -36,14 +36,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetalhesExercicios" />
         <activity android:name=".CadastroExercicio" />
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.GymCardTraning.NoActionBar" />
         <activity android:name=".FormCadastro" />
-
         <activity
             android:name=".ui.activities.WeatherActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"

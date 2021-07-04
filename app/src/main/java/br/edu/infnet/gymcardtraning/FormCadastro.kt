@@ -25,18 +25,10 @@ class FormCadastro : AppCompatActivity() {
         binding.btCadastro.setOnClickListener {
             val nome = binding.editNome.text.toString()
             val email = binding.editEmail.text.toString()
-            val telefone = binding.editTelefone.text.toString()
-            val idade = binding.editIdade.text.toString()
-            val altura = binding.editAltura.text.toString()
-            val peso = binding.editPeso.text.toString()
             val senha = binding.editSenha.text.toString()
             val mensagem_erro = binding.mensagemErro
             if (nome.isEmpty() ||
                 email.isEmpty()||
-                telefone.isEmpty() ||
-                idade.isEmpty() ||
-                altura.isEmpty() ||
-                peso.isEmpty() ||
                 senha.isEmpty()){
 
                 mensagem_erro.setText("Preencha todos os campos!")
@@ -63,12 +55,8 @@ class FormCadastro : AppCompatActivity() {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,senha).addOnCompleteListener {
             if (it.isSuccessful){
                 Toast.makeText(this, "Usuario cadastrado com sucesso!",Toast.LENGTH_LONG).show()
-                binding.editNome.setText("")
+
                 binding.editEmail.setText("")
-                binding.editTelefone.setText("")
-                binding.editIdade.setText("")
-                binding.editAltura.setText("")
-                binding.editPeso.setText("")
                 binding.editSenha.setText("")
             }
         }.addOnFailureListener {

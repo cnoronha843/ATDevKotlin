@@ -1,26 +1,41 @@
- package br.edu.infnet.gymcardtraning
+package br.edu.infnet.gymcardtraning
 
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.View
 import android.widget.Toast
 import br.edu.infnet.gymcardtraning.Model.Exercicio
-
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_cadastro_exercicios.*
-import kotlinx.android.synthetic.main.fragment_exercios.*
 import java.util.*
 
-
-class CadastroExercicio : AppCompatActivity() {
+class UpdateExercicioActivity : AppCompatActivity() {
     private var SelecionarUri: Uri? = null
-
+    var uid =""
+    var nomeExercicio: String? = ""
+    var tempoExercicio: String? = ""
+    var descansoExercicio: String? = ""
+    var url: String? = ""
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
+
+
+        uid = intent.extras?.getString("uid")!!
+        nomeExercicio = intent.extras?.getString("nomeExercicio")!!
+        tempoExercicio =intent.extras?.getString("tempoExercicio")!!
+        descansoExercicio =intent.extras?.getString("descansoExercicio")!!
+        url =intent.extras?.getString("url")!!
+
+        edit_nome_exercicio.setText(nomeExercicio)
+        edit_descanso_exercicio.setText(descansoExercicio)
+        edit_qtd_exercicio.setText(tempoExercicio)
+        bt_selecionar_foto.text = url.toString()
+
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_exercicios)
@@ -60,8 +75,8 @@ class CadastroExercicio : AppCompatActivity() {
 
                         val Exercicios = Exercicio(url, nomeExercicio,tempoExercicio,descansoExercicio)
 
-                        FirebaseFirestore.getInstance().collection("Exercicios")
-                            .add(Exercicios).addOnSuccessListener {
+                        FirebaseFirestore.getInstance().collection("Exercicios").document(uid!!)
+                            .set(Exercicios).addOnSuccessListener {
 
                                 Toast.makeText(this, "Exercicio cadastrado com sucesso!", Toast.LENGTH_LONG).show()
                                 IrParaHome()

@@ -88,7 +88,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/green_logo"
+        android:backgroundTint="@color/black_50"
         android:padding="15dp"
         android:text="Cadastrar exercicio"
         android:textAllCaps="false"

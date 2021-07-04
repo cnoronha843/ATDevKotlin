@@ -1,95 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="10dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
-    android:layout_marginEnd="10dp"
-    android:background="@color/black">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/txt_nome_exercicio"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:maxLength="50"
-        android:text="Nome do Exercicio: "
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
+            <TextView
+                android:id="@+id/tv_exercico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Exercicios"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                app:layout_constraintHorizontal_bias="0.173"
+                app:layout_constraintStart_toEndOf="@+id/fotoExercicio"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/nomeExercicio"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="87dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="136dp"
-        android:layout_toEndOf="@+id/txt_nome_exercicio"
-        android:maxLength="50"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/txt_qtd_exercicio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_nome_exercicio"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="12dp"
-        android:maxLength="50"
-        android:text="Duração do Exercicio: "
-        android:textColor="@color/white"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/qtdExercicio"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_below="@+id/nomeExercicio"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="136dp"
-        android:layout_toEndOf="@+id/txt_qtd_exercicio"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_exercico"
+                app:layout_constraintEnd_toStartOf="@+id/edit_exercicio"
+                app:layout_constraintTop_toTopOf="@+id/tv_exercico">
 
 
-    <TextView
-        android:id="@+id/txt_descanso_exercicio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/qtdExercicio"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="10dp"
-        android:maxLength="50"
-        android:text="Descanso: "
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/tempoDescansoExercicio"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_below="@+id/qtdExercicio"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="137dp"
-        android:layout_toEndOf="@+id/txt_descanso_exercicio"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/fotoExercicio"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_launcher_background" />
 
-</RelativeLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/edit_exercicio"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:background="@color/purple_500"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    app:srcCompat="@drawable/ic_editar_foreground" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/btn_delete"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/edit_exercicio"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_deletar_foreground" />
+
+            <TextView
+                android:id="@+id/label_quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="QTD Ex"
+                app:layout_constraintEnd_toStartOf="@+id/tv_quantidade"
+                app:layout_constraintHorizontal_bias="0.26"
+                app:layout_constraintStart_toEndOf="@+id/fotoExercicio"
+                app:layout_constraintTop_toBottomOf="@+id/tv_exercico" />
+
+            <TextView
+                android:id="@+id/tv_quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:gravity="end"
+                android:text="0"
+                app:layout_constraintBottom_toTopOf="@+id/tv_descanso"
+                app:layout_constraintEnd_toStartOf="@+id/btn_delete"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.848" />
+
+            <TextView
+                android:id="@+id/label_descanso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+
+                android:layout_marginBottom="28dp"
+                android:text="Descanso"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_descanso"
+                app:layout_constraintHorizontal_bias="0.722"
+                app:layout_constraintStart_toEndOf="@+id/fotoExercicio"
+                app:layout_constraintTop_toBottomOf="@+id/label_quantidade"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/tv_descanso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginBottom="28dp"
+                android:gravity="end"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fotoExercicio" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
